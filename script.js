@@ -1,6 +1,3 @@
-const loader = document.querySelector('.loader');
-const images = document.querySelectorAll('img');
-const imagesContainer = document.querySelector('.images-container');
 let imagesLoaded = false;
 
 window.addEventListener('scroll', () => {
@@ -11,6 +8,7 @@ window.addEventListener('scroll', () => {
 });
 
 function showOrHideLoader() {
+  const loader = document.querySelector('.loader');
   loader.hidden = !loader.hidden;
 }
 
@@ -38,6 +36,7 @@ function renderMarkupWithImages(images) {
 }
 
 function insertImagesIntoDOM(where, what) {
+  const imagesContainer = document.querySelector('.images-container');
   imagesContainer.insertAdjacentHTML(where, what);
   changeImagesLoaded();
   showOrHideLoader();
